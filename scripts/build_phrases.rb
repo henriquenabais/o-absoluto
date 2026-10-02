@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require "yaml"
 require "json"
+require "kramdown"
 
 phrases = Dir["_frases/*.md"].filter_map do |path|
   raw = File.read(path, encoding: "UTF-8")
@@ -16,13 +17,8 @@ phrases = Dir["_frases/*.md"].filter_map do |path|
     case section["type"]
     when "texto"
       body = section["body"].to_s
-      # Pages CMS guarda Markdown. Conversão mínima e segura para HTML;
-      # formatação mais rica poderá ser expandida sem alterar o formato do índice.
-      escaped = body.gsub("&", "&amp;").gsub("<", "&lt;").gsub(">", "&gt;")
-      escaped = escaped.gsub(/\*\*(.+?)\*\*/m, '<strong>\\1</strong>')
-                       .gsub(/\*(.+?)\*/m, '<em>\\1</em>')
-      paragraphs = escaped.split(/\n{2,}/).map { |p| "<p>#{p.gsub("\n", "<br>")}</p>" }.join("\n")
-      { "type" => "texto", "html" => paragraphs }
+      html = Kramdown::Document.new(body, input: "GFM").to_html
+      { "type" => "texto", "html" => html }
     when "pdf"
       { "type" => "pdf", "file" => section["file"].to_s, "caption" => section["caption"].to_s }
     else
