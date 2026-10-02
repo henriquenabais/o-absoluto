@@ -1,6 +1,16 @@
 media:
-  input: media
-  output: /media
+  - name: imagens
+    label: Imagens
+    input: media/images
+    output: /o-absoluto/media/images
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+  - name: documentos
+    label: Documentos
+    input: media/documents
+    output: /o-absoluto/media/documents
+    extensions: [pdf]
+    rename: safe
 
 content:
   - name: paginas
@@ -8,11 +18,25 @@ content:
     type: collection
     path: content/paginas
     view:
+      primary: title
       fields: [title, order]
+      sort: order
+      order: asc
     fields:
-      - { name: title, label: Título, type: string }
-      - { name: order, label: Ordem, type: number }
-      - { name: body, label: Conteúdo, type: rich-text }
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: order
+        label: Ordem
+        type: number
+        required: true
+      - name: body
+        label: Conteúdo
+        type: rich-text
+        options:
+          media: imagens
+          rename: safe
 
   - name: frases
     label: Frases
@@ -20,8 +44,51 @@ content:
     path: content/frases
     filename: "{fields.id}.md"
     view:
+      primary: phrase
       fields: [id, phrase]
+      sort: id
+      order: asc
     fields:
-      - { name: id, label: Número, type: number }
-      - { name: phrase, label: Frase, type: string }
-      - { name: body, label: Conteúdo, type: rich-text }
+      - name: id
+        label: Número
+        type: number
+        required: true
+      - name: phrase
+        label: Frase
+        type: string
+        required: true
+      - name: sections
+        label: Conteúdo
+        type: block
+        list:
+          collapsible:
+            collapsed: false
+            summary: "Bloco {index}"
+        blockKey: type
+        blocks:
+          - name: texto
+            label: Texto (permite imagens)
+            fields:
+              - name: body
+                label: Texto
+                type: rich-text
+                options:
+                  media: imagens
+                  rename: safe
+                  switcher: false
+          - name: pdf
+            label: PDF
+            fields:
+              - name: file
+                label: Ficheiro PDF
+                type: file
+                required: true
+                options:
+                  media: documentos
+                  extensions: [pdf]
+                  rename: safe
+              - name: caption
+                label: Legenda
+                type: string
+                required: false
+                description: "Opcional: texto a apresentar junto ao PDF."
