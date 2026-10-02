@@ -17,6 +17,9 @@ jobs:
       - name: Obter repositório
         uses: actions/checkout@v4
 
+      - name: Preparar conversor Markdown
+        run: gem install kramdown kramdown-parser-gfm --no-document
+
       - name: Gerar índice
         run: ruby scripts/build_phrases.rb
 
