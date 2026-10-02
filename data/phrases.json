@@ -1,23 +1,47 @@
----
-layout: null
-permalink: /data/phrases.json
----
 [
-{% assign phrase_pages = site.pages | where_exp: "p", "p.path contains 'content/frases/' | sort: "id" %}
-{% for p in phrase_pages %}
   {
-    "id": {{ p.id | jsonify }},
-    "text": {{ p.phrase | jsonify }},
+    "id": 1,
+    "text": "Frase demonstrativa número um.",
     "sections": [
-      {% for s in p.sections %}
       {
-        "type": {{ s.type | jsonify }}{% if s.type == "texto" %},
-        "html": {{ s.body | markdownify | jsonify }}{% elsif s.type == "pdf" %},
-        "file": {{ s.file | jsonify }},
-        "caption": {{ s.caption | default: "" | jsonify }}{% endif %}
-      }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
+        "type": "texto",
+        "html": "<p>Esta é uma explicação livre da frase. O conteúdo pode alternar texto, imagens, documentos e outros elementos.</p>"
+      }
     ]
-  }{% unless forloop.last %},{% endunless %}
-{% endfor %}
+  },
+  {
+    "id": 2,
+    "text": "Frase demonstrativa número dois.",
+    "sections": [
+      {
+        "type": "texto",
+        "html": "<p>Uma frase pode ter apenas texto ou uma composição mais extensa.</p>"
+      }
+    ]
+  },
+  {
+    "id": 1001,
+    "text": "Exemplo que demonstra numeração acima de mil.",
+    "sections": [
+      {
+        "type": "texto",
+        "html": "<p>A numeração não está limitada a três algarismos.</p>"
+      }
+    ]
+  },
+  {
+    "id": 9999,
+    "text": "esta é a primeira fráse",
+    "sections": [
+      {
+        "type": "texto",
+        "html": "<p>ssssss</p>"
+      },
+      {
+        "type": "pdf",
+        "file": "/o-absoluto/media/documents/formulario2023.pdf",
+        "caption": "legenda do formulario"
+      }
+    ]
+  }
 ]
