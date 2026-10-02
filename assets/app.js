@@ -17,7 +17,7 @@ async function init(){
   try{
     [chapters,phrases]=await Promise.all([
       fetch("content/chapters.json").then(r=>{if(!r.ok)throw new Error("chapters");return r.json()}),
-      fetch("data/phrases.json").then(r=>{if(!r.ok)throw new Error("phrases");return r.json()})
+      fetch(`data/phrases.json?v=${Date.now()}`,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("phrases");return r.json()})
     ]);
     phrases.sort((a,b)=>a.id-b.id);
     drawMenu();addEventListener("hashchange",route);route();
