@@ -35,7 +35,7 @@
     "sections": [
       {
         "type": "texto",
-        "html": "<p>o texto é: ssssss teste funciona maisumavez</p>"
+        "html": "<p>o texto é: ssssss teste funciona maisumavez automatica</p>"
       },
       {
         "type": "pdf",
