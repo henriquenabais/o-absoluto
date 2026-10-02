@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require "yaml"
 require "json"
-require "kramdown"
 
 phrases = Dir["_frases/*.md"].filter_map do |path|
   raw = File.read(path, encoding: "UTF-8")
@@ -17,7 +16,15 @@ phrases = Dir["_frases/*.md"].filter_map do |path|
     case section["type"]
     when "texto"
       body = section["body"].to_s
-      html = Kramdown::Document.new(body, input: "GFM").to_html
+      require "cgi"
+      inline = ->(t) {
+        x = CGI.escapeHTML(t)
+        x = x.gsub(/!\[([^\]]*)\]\(([^)]+)\)/, '<img src="\\2" alt="\\1">')
+        x = x.gsub(/\[([^\]]+)\]\(([^)]+)\)/, '<a href="\\2">\\1</a>')
+        x = x.gsub(/\*\*(.+?)\*\*/, '<strong>\\1</strong>')
+        x.gsub(/\*(.+?)\*/, '<em>\\1</em>')
+      }
+      html = body.split(/\n{2,}/).map { |p| "<p>#{inline.call(p).gsub("\n", "<br>")}</p>" }.join("\n")
       { "type" => "texto", "html" => html }
     when "pdf"
       { "type" => "pdf", "file" => section["file"].to_s, "caption" => section["caption"].to_s }
