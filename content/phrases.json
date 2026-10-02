@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "text": "Frase demonstrativa número um.",
+    "html": "<p>Esta é uma explicação livre da frase. O conteúdo pode alternar texto, imagens, documentos e outros elementos.</p><h2>Ortografia</h2><p>Aqui poderá explicar os elementos ortográficos especiais usados nesta frase.</p>"
+  },
+  {
+    "id": 2,
+    "text": "Frase demonstrativa número dois.",
+    "html": "<p>Uma frase pode ter apenas texto ou uma composição mais extensa.</p>"
+  },
+  {
+    "id": 1001,
+    "text": "Exemplo que demonstra numeração acima de mil.",
+    "html": "<p>A numeração não está limitada a três algarismos.</p>"
+  }
+]
