@@ -3,12 +3,21 @@ layout: null
 permalink: /data/phrases.json
 ---
 [
-{% assign phrase_pages = site.pages | where_exp: "p", "p.path contains 'content/frases/'" | sort: "id" %}
+{% assign phrase_pages = site.pages | where_exp: "p", "p.path contains 'content/frases/' | sort: "id" %}
 {% for p in phrase_pages %}
   {
     "id": {{ p.id | jsonify }},
     "text": {{ p.phrase | jsonify }},
-    "sections": {{ p.sections | jsonify }}
+    "sections": [
+      {% for s in p.sections %}
+      {
+        "type": {{ s.type | jsonify }}{% if s.type == "texto" %},
+        "html": {{ s.body | markdownify | jsonify }}{% elsif s.type == "pdf" %},
+        "file": {{ s.file | jsonify }},
+        "caption": {{ s.caption | default: "" | jsonify }}{% endif %}
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]
