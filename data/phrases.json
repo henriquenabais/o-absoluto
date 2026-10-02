@@ -1,0 +1,14 @@
+---
+layout: null
+permalink: /data/phrases.json
+---
+[
+{% assign phrase_pages = site.pages | where_exp: "p", "p.path contains 'content/frases/'" | sort: "id" %}
+{% for p in phrase_pages %}
+  {
+    "id": {{ p.id | jsonify }},
+    "text": {{ p.phrase | jsonify }},
+    "sections": {{ p.sections | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
