@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "_frases/**"
+      - ".github/action-test"
   workflow_dispatch:
 
 permissions:
