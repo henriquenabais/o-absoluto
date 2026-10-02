@@ -1,0 +1,27 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: paginas
+    label: Capítulos
+    type: collection
+    path: content/paginas
+    view:
+      fields: [title, order]
+    fields:
+      - { name: title, label: Título, type: string }
+      - { name: order, label: Ordem, type: number }
+      - { name: body, label: Conteúdo, type: rich-text }
+
+  - name: frases
+    label: Frases
+    type: collection
+    path: content/frases
+    filename: "{fields.id}.md"
+    view:
+      fields: [id, phrase]
+    fields:
+      - { name: id, label: Número, type: number }
+      - { name: phrase, label: Frase, type: string }
+      - { name: body, label: Conteúdo, type: rich-text }
