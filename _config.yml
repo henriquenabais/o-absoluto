@@ -1,4 +1,7 @@
 title: O ABSOLUTO
 baseurl: /o-absoluto
+collections:
+  frases:
+    output: false
 exclude:
   - README.md
