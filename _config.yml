@@ -1,0 +1,14 @@
+title: O ABSOLUTO
+baseurl: /o-absoluto
+collections:
+  frases:
+    output: false
+    permalink: /frases/:name/
+defaults:
+  - scope:
+      path: ""
+      type: frases
+    values:
+      layout: null
+exclude:
+  - README.md
