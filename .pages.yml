@@ -41,7 +41,7 @@ content:
   - name: frases
     label: Frases
     type: collection
-    path: content/frases
+    path: _frases
     filename: "{fields.id}.md"
     view:
       primary: phrase
