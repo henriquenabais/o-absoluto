@@ -35,7 +35,7 @@
     "sections": [
       {
         "type": "texto",
-        "html": "<p>o texto é: ssssss teste</p>"
+        "html": "<p>o texto é: ssssss teste funciona</p>"
       },
       {
         "type": "pdf",
