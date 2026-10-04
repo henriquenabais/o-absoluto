@@ -6,6 +6,10 @@
       {
         "type": "texto",
         "html": "<p>Esta é uma explicação livre da frase. O conteúdo pode alternar texto, imagens, documentos e outros elementos.</p>"
+      },
+      {
+        "type": "texto",
+        "html": "<p><img src=\"/o-absoluto/media/images/3-accoes.jpeg\" alt=\"\"></p>"
       }
     ]
   },
