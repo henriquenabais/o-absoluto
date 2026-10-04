@@ -26,9 +26,9 @@ def markdown_to_html(text)
     line = line.chomp
     if line.strip.empty?
       flush.call
-    elsif line =~ /\A(#{1,6})\s+(.+)\z/
+    elsif line =~ /\A(#+)\s+(.+)\z/
       flush.call
-      n = $1.length
+      n = [$1.length, 6].min
       out << "<h#{n}>#{inline_markdown($2)}</h#{n}>"
     else
       paragraph << line.strip
