@@ -1,6 +1,6 @@
 ---
-title: Introdução
-order: 2
+title: Introdução na posicao 1
+order: 1
 ---
 Este espaço apresenta uma coleção de frases e ideias sobre a forma como **O ABSOLUTO** se refere a **SI**, enquadradas num sistema de três níveis de Consciência.
 
