@@ -1,0 +1,33 @@
+name: Atualizar índice de capítulos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/paginas/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v4
+
+      - name: Gerar índice
+        run: ruby scripts/build_chapters.rb
+
+      - name: Guardar índice atualizado
+        run: |
+          if git diff --quiet -- content/chapters.json; then
+            echo "Índice já está atualizado."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/chapters.json
+          git commit -m "Atualizar índice de capítulos"
+          git push
