@@ -20,6 +20,16 @@
     ]
   },
   {
+    "id": 1000,
+    "text": "Título da frase 1000",
+    "sections": [
+      {
+        "type": "texto",
+        "html": "<p>Este é o texto da frase 1000</p>"
+      }
+    ]
+  },
+  {
     "id": 1001,
     "text": "Exemplo que demonstra numeração acima de mil.",
     "sections": [
