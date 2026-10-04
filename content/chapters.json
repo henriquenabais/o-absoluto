@@ -1,17 +1,20 @@
 [
   {
-    "slug": "inicio",
+    "slug": "introducao",
     "title": "Introdução",
-    "html": "<p class='lead'>Este espaço apresenta uma coleção de frases e ideias sobre a forma como <strong>O ABSOLUTO</strong> se refere a <strong>SI</strong>, enquadradas num sistema de três níveis de Consciência.</p><p>Este texto é apenas demonstrativo e poderá ser livremente substituído.</p>"
+    "order": 1,
+    "html": "<p>Este espaço apresenta uma coleção de frases e ideias sobre a forma como <strong>O ABSOLUTO</strong> se refere a <strong>SI</strong>, enquadradas num sistema de três níveis de Consciência.</p>\n<p>Este texto é apenas demonstrativo e poderá ser livremente substituído.</p>\n<p>TESTE DE ACTUALIZAÇÃO</p>\n<p>novo teste</p>"
   },
   {
     "slug": "niveis",
     "title": "3 Níveis de Consciência",
+    "order": 2,
     "html": "<p>Conteúdo demonstrativo do capítulo sobre os três níveis de Consciência.</p>"
   },
   {
     "slug": "ortografia",
     "title": "3 Níveis de Consciência e Ortografia",
+    "order": 3,
     "html": "<p>Espaço para explicar a ortografia própria do projeto e a sua relação com os três níveis de Consciência.</p>"
   }
 ]
