@@ -13,6 +13,9 @@ phrases = Dir["_frases/*.md"].filter_map do |path|
   text = data["phrase"]
   next if id.nil? || text.nil?
 
+  phrase_text = text.to_s
+  phrase_html = SimpleMarkdown.to_html(phrase_text)
+
   sections = Array(data["sections"]).map do |section|
     case section["type"]
     when "texto"
@@ -25,7 +28,7 @@ phrases = Dir["_frases/*.md"].filter_map do |path|
     end
   end.compact
 
-  { "id" => id.to_i, "text" => text.to_s, "sections" => sections }
+  { "id" => id.to_i, "text" => phrase_text, "phrase_html" => phrase_html, "sections" => sections }
 end
 
 phrases.sort_by! { |p| p["id"] }
