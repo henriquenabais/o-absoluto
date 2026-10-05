@@ -55,8 +55,11 @@ content:
         required: true
       - name: phrase
         label: Frase
-        type: text
+        type: rich-text
         required: true
+        options:
+          media: false
+          switcher: false
       - name: sections
         label: Conteúdo
         type: block
