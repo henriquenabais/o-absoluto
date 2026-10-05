@@ -2,6 +2,7 @@
   {
     "id": 1,
     "text": "Frase demonstrativa número um.",
+    "phrase_html": "<p>Frase demonstrativa número um.</p>",
     "sections": [
       {
         "type": "texto",
@@ -16,6 +17,7 @@
   {
     "id": 2,
     "text": "Frase demonstrativa número dois.",
+    "phrase_html": "<p>Frase demonstrativa número dois.</p>",
     "sections": [
       {
         "type": "texto",
@@ -26,11 +28,13 @@
   {
     "id": 7,
     "text": "Esta é uma explicação livre da frase. O conteúdo pode alternar texto, imagens, documentos e outros elementos.Esta é uma explicação livre da frase. O conteúdo pode alternar texto, imagens, documentos e outros xx",
+    "phrase_html": "<p>Esta é uma explicação livre da frase. O conteúdo pode alternar texto, imagens, documentos e outros elementos.Esta é uma explicação livre da frase. O conteúdo pode alternar texto, imagens, documentos e outros xx</p>",
     "sections": []
   },
   {
     "id": 1000,
     "text": "Título da frase 1000",
+    "phrase_html": "<p>Título da frase 1000</p>",
     "sections": [
       {
         "type": "texto",
@@ -41,6 +45,7 @@
   {
     "id": 1001,
     "text": "Exemplo que demonstra numeração acima de mil.",
+    "phrase_html": "<p>Exemplo que demonstra numeração acima de mil.</p>",
     "sections": [
       {
         "type": "texto",
@@ -51,6 +56,7 @@
   {
     "id": 9999,
     "text": "esta é a primeira fráse",
+    "phrase_html": "<p>esta é a primeira fráse</p>",
     "sections": [
       {
         "type": "texto",
@@ -66,21 +72,31 @@
   {
     "id": 10000,
     "text": "aqui a primeira linha",
+    "phrase_html": "<p>aqui a primeira linha</p>",
     "sections": []
   },
   {
     "id": 10001,
     "text": "num tacho 5 dentes de alho 4 colheres de azeite louro juntar o cação",
+    "phrase_html": "<p>num tacho 5 dentes de alho 4 colheres de azeite louro juntar o cação</p>",
     "sections": []
   },
   {
     "id": 10002,
     "text": "xxx num tacho 5 dentes de alho 4 colheres de azeite louro juntar o cação",
+    "phrase_html": "<p>xxx num tacho 5 dentes de alho 4 colheres de azeite louro juntar o cação</p>",
     "sections": []
   },
   {
     "id": 10003,
     "text": "num tacho 5 dentes de alho 4 colheres de azeite louro juntar o cação  juntar agua quente ate cobrir o cação sal e pimenta  deixar ao lume 10  minutos",
+    "phrase_html": "<p>num tacho 5 dentes de alho 4 colheres de azeite louro juntar o cação  juntar agua quente ate cobrir o cação sal e pimenta  deixar ao lume 10  minutos</p>",
+    "sections": []
+  },
+  {
+    "id": 10005,
+    "text": "aqui a 1a linha\n\naqui a 2a linha\n\nnum tacho\n\n5 dentes de alho\n\n4 colheres de azeite",
+    "phrase_html": "<p>aqui a 1a linha</p>\n<p>aqui a 2a linha</p>\n<p>num tacho</p>\n<p>5 dentes de alho</p>\n<p>4 colheres de azeite</p>",
     "sections": []
   }
 ]
