@@ -28,9 +28,19 @@ phrases = Dir["_frases/*.md"].filter_map do |path|
     end
   end.compact
 
-  { "id" => id.to_i, "text" => phrase_text, "phrase_html" => phrase_html, "sections" => sections }
+  { "id" => id.to_i, "text" => phrase_text, "phrase_html" => phrase_html, "sections" => sections, "source" => path }
 end
 
+groups = phrases.group_by { |p| p["id"] }
+duplicates = groups.select { |_id, items| items.length > 1 }
+unless duplicates.empty?
+  details = duplicates.map do |id, items|
+    "Frase #{id}: #{items.map { |item| item["source"] }.join(", ")}"
+  end
+  abort "ERRO: existem números de frase repetidos.\n#{details.join("\n")}\nCorrija os números antes de publicar."
+end
+
+phrases.each { |p| p.delete("source") }
 phrases.sort_by! { |p| p["id"] }
 Dir.mkdir("data") unless Dir.exist?("data")
 File.write("data/phrases.json", JSON.pretty_generate(phrases) + "\n")
