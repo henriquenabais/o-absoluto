@@ -55,7 +55,7 @@ content:
         required: true
       - name: phrase
         label: Frase
-        type: string
+        type: text
         required: true
       - name: sections
         label: Conteúdo
