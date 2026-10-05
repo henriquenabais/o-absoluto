@@ -3,14 +3,16 @@
 
 .phrase-detail{max-width:820px;margin:0 auto}
 .phrase-number{font:600 .78rem Arial,sans-serif;letter-spacing:.08em;color:#777;margin-bottom:.65rem}
-.phrase-detail .phrase{font-size:clamp(1.05rem,1.8vw,1.25rem);line-height:1.45;margin:.25rem 0 2rem;font-weight:700}
+.phrase-detail .phrase{font-size:clamp(1.05rem,1.8vw,1.25rem);line-height:1.15;margin:.25rem 0 1rem;font-weight:700}
 .phrase-detail .phrase p{margin:0}
-.phrase-detail .phrase p+p{margin-top:1em}
-.phrase-content{margin-top:1.5rem;font-size:1.125rem;line-height:1.4}
-.phrase-content .text-block+ .text-block{margin-top:1.5rem}
+.phrase-detail .phrase p+p{margin-top:.33em}
+.phrase-content{margin-top:.75rem;font-size:1.125rem;line-height:1.15}
+.phrase-content p{margin:0}
+.phrase-content p+p{margin-top:.33em}
+.phrase-content .text-block+ .text-block{margin-top:.5rem}
 .phrase-nav{border-top:1px solid #ddd;padding-top:1.25rem;display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center}
 .phrase-nav a{color:#333;text-decoration:none}
 .phrase-nav a:hover{text-decoration:underline}
 .phrase-nav span:last-child{text-align:right}
 .phrase-all{font-weight:700}
-@media(max-width:600px){.phrase-nav{grid-template-columns:1fr 1fr}.phrase-all{grid-column:1/-1;grid-row:1;text-align:center}.phrase-nav span:first-child{grid-column:1}.phrase-nav span:last-child{grid-column:2}.phrase-detail .phrase{margin-bottom:1.5rem}}
+@media(max-width:600px){.phrase-nav{grid-template-columns:1fr 1fr}.phrase-all{grid-column:1/-1;grid-row:1;text-align:center}.phrase-nav span:first-child{grid-column:1}.phrase-nav span:last-child{grid-column:2}.phrase-detail .phrase{margin-bottom:1rem}}
