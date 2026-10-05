@@ -125,5 +125,16 @@
         "caption": "Esta é a legenda da fatura da Unmani"
       }
     ]
+  },
+  {
+    "id": 100100,
+    "text": "**frse negrito**\n\n*frase italico*\n\n1. frase\n2. frase\n\n\n\n",
+    "phrase_html": "<p><strong>frse negrito</strong></p>\n<p><em>frase italico</em></p>\n<ol>\n<li>frase</li>\n<li>frase</li>\n</ol>",
+    "sections": [
+      {
+        "type": "texto",
+        "html": "<p><strong>texto negrito</strong></p>\n<p><em>texto italico</em></p>\n<ol>\n<li>ponto</li>\n<li>ponto</li>\n<li><strong>ponto</strong></li>\n<li><em>ponto</em></li>\n</ol>\n<p>5.</p>"
+      }
+    ]
   }
 ]
