@@ -24,6 +24,11 @@
     ]
   },
   {
+    "id": 7,
+    "text": "Esta é uma explicação livre da frase. O conteúdo pode alternar texto, imagens, documentos e outros elementos.",
+    "sections": []
+  },
+  {
     "id": 1000,
     "text": "Título da frase 1000",
     "sections": [
