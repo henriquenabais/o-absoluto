@@ -6,7 +6,7 @@
 .phrase-detail .phrase{font-size:clamp(1.05rem,1.8vw,1.25rem);line-height:1.45;margin:.25rem 0 2rem;font-weight:700}
 .phrase-detail .phrase p{margin:0}
 .phrase-detail .phrase p+p{margin-top:1em}
-.phrase-content{margin-top:1.5rem;font-size:1.125rem;line-height:1.8}
+.phrase-content{margin-top:1.5rem;font-size:1.125rem;line-height:1.4}
 .phrase-content .text-block+ .text-block{margin-top:1.5rem}
 .phrase-nav{border-top:1px solid #ddd;padding-top:1.25rem;display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center}
 .phrase-nav a{color:#333;text-decoration:none}
